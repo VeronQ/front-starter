@@ -1,0 +1,4 @@
+{
+  "dist/app.css": "/dist/./css/app.bundle.css",
+  "dist/app.js": "/dist/./js/app.bundle.js"
+}
