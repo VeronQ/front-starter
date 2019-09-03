@@ -1,4 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const foo = 'foo';
-  console.log(foo);
-});
+  const foo = 'foo'
+  console.log(foo)
+})

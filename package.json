@@ -1,10 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "encore.dev": "encore dev",
-    "encore.dev-server": "encore dev-server --hot",
-    "encore.watch": "encore dev --watch",
-    "encore.prod": "encore production"
+    "dev": "encore dev --watch",
+    "prod": "encore production"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
