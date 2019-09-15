@@ -12,30 +12,35 @@ const publicPath = '/dist'
 const jsPath = path.join(assetsPath, './js')
 const cssPath = path.join(assetsPath, './css')
 
-Encore.cleanupOutputBeforeBuild().
-  setPublicPath(publicPath).
-  setOutputPath(outputPath).
-  disableSingleRuntimeChunk().
-  addEntry('app',
+Encore
+  .cleanupOutputBeforeBuild()
+  .setPublicPath(publicPath)
+  .setOutputPath(outputPath)
+  .disableSingleRuntimeChunk()
+
+  .addEntry('app',
     [
       path.join(jsPath, '/main.js'),
       path.join(cssPath, '/main.scss'),
     ],
-  ).
-  enableSassLoader().
-  enablePostCssLoader().
-  enableSourceMaps(!isProduction).
-  enableVersioning(isProduction).
-  configureFilenames({
+  )
+
+  .enableSassLoader()
+  .enablePostCssLoader()
+  .enableSourceMaps(!isProduction)
+  .enableVersioning(isProduction)
+
+  .configureFilenames({
     js: './js/[name].bundle.js',
     css: './css/[name].bundle.css',
-  }).
-  addPlugin(
+  })
+
+  .addPlugin(
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
     }),
   )
-
+;
 
 const config = Encore.getWebpackConfig()
 
